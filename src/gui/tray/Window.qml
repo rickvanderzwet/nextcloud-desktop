@@ -61,7 +61,7 @@ Window {
         onShowWindow: {
             accountMenu.close();
 
-            trayWindow.screen = systrayBackend.currentScreenVar();
+            trayWindow.screen = Qt.application.screens[systrayBackend.currentScreenVar()];
 
             var position = systrayBackend.computeWindowPosition(trayWindow.width, trayWindow.height)
             trayWindow.x = position.x
